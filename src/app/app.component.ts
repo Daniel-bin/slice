@@ -10,6 +10,7 @@ import { Watch } from "./interfaces/watch";
 export class AppComponent implements OnInit {
   constructor(private watchListService: WatchListService) {}
   watchList: Watch[];
+  showAll: boolean;
   ngOnInit() {
     this.watchListService
       .getWatchList()
@@ -22,5 +23,9 @@ export class AppComponent implements OnInit {
 
   moveDown(index: number) {
     this.watchListService.moveList(false, index);
+  }
+
+  showAllClicked(){
+      this.showAll = true;
   }
 }

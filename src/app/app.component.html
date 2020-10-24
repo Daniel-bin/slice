@@ -1,5 +1,5 @@
 <h4>Flopbuster Watch List</h4>
-
+<button (click)="showAll()" class="btn btn-primary">Show All</button>
 <div *ngFor="let watch of watchList | slice:0:4; index as i; last as l">
 	<my-watch-list-item (moveUpEvent)="moveUp($event)" (moveDownEvent)="moveDown($event)" [item]="watch" [index]="i"
 		[last]="l"></my-watch-list-item>
