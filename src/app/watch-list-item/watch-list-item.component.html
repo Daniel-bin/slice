@@ -1,0 +1,11 @@
+<div style="display:flex; justify-content:space-between" class=" text-light p-3 rounded mb-2"
+	[ngClass]="{'bg-success': item.onSale, 'bg-dark':!item.onSale }">
+	<div>
+		<div>{{index + 1}} {{item.title | titlecase}}</div>
+		<div> Price: {{item.price | currency}} Date: {{ item.dateAdded | date:'dd/MM/yyyy'}}</div>
+	</div>
+	<div>
+		<i (click)=" moveUp()" *ngIf="index > 0" class="material-icons">expand_less</i>
+		<i (click)="moveDown()" *ngIf="!last" class="material-icons">expand_more</i>
+	</div>
+</div>
